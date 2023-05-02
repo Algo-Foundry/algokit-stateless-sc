@@ -1,0 +1,46 @@
+#pragma version 8
+txn Receiver
+addr U2C455RC4GUXJCLBLMKPQ4WOYDG3HQNUYDXKTQQQGIC67REIA7CRBRNID4
+==
+bnz main_l4
+txn Receiver
+addr LHRYGXNIMZKE24FXS3A5DCTPHCA63H6HYIGITBKEQJB4JPZ3FIQ6SYUNS4
+==
+bnz main_l3
+err
+main_l3:
+txn TypeEnum
+int pay
+==
+txn RekeyTo
+global ZeroAddress
+==
+&&
+txn CloseRemainderTo
+global ZeroAddress
+==
+&&
+txn FirstValid
+int 185
+>
+&&
+b main_l5
+main_l4:
+txn TypeEnum
+int pay
+==
+txn RekeyTo
+global ZeroAddress
+==
+&&
+txn CloseRemainderTo
+global ZeroAddress
+==
+&&
+arg 0
+sha256
+byte base64(4LwK+i4AB9b+C/VppWFpiahv11+mUlgnCElb12N/y5Y=)
+==
+&&
+main_l5:
+return

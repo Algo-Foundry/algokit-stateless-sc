@@ -17,7 +17,7 @@ Complete the code in `assets/htlc.py` so that this stateless smart contract perf
 
 #### Fund recovery check
 1. Receiver is `acc1` address.
-2. Current block round is past the `timeout` value supplied. For simplicity sake, assume `timeout` value is `50` rounds ahead of the block round when the contract account is first created.
+2. Current block round is past the `timeout` value supplied. For simplicity sake, assume `timeout` value is `5` rounds ahead of the block round when the contract account is first created.
 
 ## Setup instructions
 
@@ -36,7 +36,9 @@ run `yarn install`
 run `poetry shell`
 
 ### Compile contracts
-run `python htlc.py`
+Please run `node scripts/scparams.js` first. It returns the 2 account addresses, the block round number where fund recovery can take place, as well as the secret hash. You will need these parameters for the smart contract to work.
+
+Run `python htlc.py` to compile the contract.
 
 ### Withdraw Funds
 run `node scripts/withdraw.js`
