@@ -40,6 +40,9 @@ Please run `node scripts/scparams.js` first. It returns the 2 account addresses,
 
 Run `python htlc.py` to compile the contract.
 
+### Create contract account
+run `node scripts/deploy.js`
+
 ### Withdraw Funds
 run `node scripts/withdraw.js`
 
